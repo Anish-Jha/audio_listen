@@ -91,6 +91,10 @@ app.post("/upload", upload.single("audio"), (req, res) => {
   res.json({ message: "File uploaded successfully", filename: req.file.filename });
 });
 
+app.get("/", (req, res) => {
+  res.send("🎉 Welcome to the Decast Audio Recording Server!");
+});
+
 server.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
